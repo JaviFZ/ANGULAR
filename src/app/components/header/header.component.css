@@ -1,0 +1,45 @@
+
+
+.header{
+    display: grid;
+    background-image: url(../../../assets/img/4-516.jpg);
+    height: 15vh;
+    justify-content: center;
+    grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3]1fr  [x4] 1fr [x5] ;
+    grid-template-rows: [y0]1fr[y1]1fr [y2]1fr [y3]1fr [y4];
+}
+
+.title{
+    /* border: 2px solid green; */
+    
+    grid-column: x0 / x3;
+    grid-row: y0 / y4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    color:goldenrod;
+   
+}
+
+
+.buttons{
+    /* border: 2px solid white; */
+    grid-column: x3 / x5;
+    grid-row: y2 / y4;
+    display: flex;
+    justify-content:start;
+    align-items: flex-start;
+}
+
+
+
+button{
+    margin: 1%;
+    height: 70%;
+    width: 15%;
+    border-radius: 25%;
+    border: 2px solid goldenrod;
+    background-color: black;
+    color: goldenrod;
+}

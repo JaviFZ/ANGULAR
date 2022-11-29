@@ -1,0 +1,51 @@
+.footer{
+    /* border: 2px solid greenyellow; */
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    color: wheat;
+    align-items: center;
+    background-image: url(../../../assets/img/maderarustica-av-ml_oscura.jpg);
+    background-position: center;
+}
+
+.footDiv{
+    /* border: 2px solid black; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5%;
+    
+    width: 100%;
+}
+
+.footDiv1{
+    /* border: 2px solid pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+}
+.redes{
+    /* border: 2px solid pink; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+.logo{
+    width: 4vw;
+    height: 5.5vh;
+}
+
+.logoInfo{
+    /* border: 2px solid black; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 75%;
+}
