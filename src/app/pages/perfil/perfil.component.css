@@ -44,12 +44,14 @@
 .img{
     height: fit-content;
     width:fit-content;
-    height: 14vh;
-    width: 8vw;
+    height: 17vh;
+    width: 10vw;
+    border-radius: 15%;
 
     
 }
 .name{
+    margin-top: 5%;
     margin-bottom: 9%;
 }
 

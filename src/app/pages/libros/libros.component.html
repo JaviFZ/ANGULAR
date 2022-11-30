@@ -1,0 +1,58 @@
+<div class="libros" >
+    <div class="card" *ngFor="let libro of libros;let par = even;" >
+        <div class="card-border-top">
+        </div>
+        <div class="img" ><img [src]="this.libro.photo"  >
+        </div>
+        <span> {{libro.titulo}}</span>
+        <p class="job"> {{libro.autor}}</p>
+        <p class="job"> {{libro.tipoLibro}}</p>
+        <p class="job"> {{libro.precio}} €</p>
+        <p class="job"> {{libro.id_libro | ref}}</p>
+        <button class="buttton"[ngClass]="{nuevaClase : par}"> Comprar🛒</button>
+      </div>
+     
+      
+</div>
+
+<div class="libros" *ngIf="libros.length===0">
+    <div>NO HAY LIBROS</div>
+</div>
+
+
+<div class="formBox">
+    <div class="text"><h2>INTRODUCE NUEVOS LIBROS</h2></div>
+    <div class="form">
+        <div class="form__group field">
+            <input required="" placeholder="Titulo" class="form__field" type="input" #titulo>
+            <label class="form__label" for="name">Titulo</label>
+        </div>
+        <div class="form__group field">
+            <input required="" placeholder="Name" class="form__field" type="input" #autor>
+            <label class="form__label" for="name">Autor</label>
+        </div>
+        <div class="form__group field">
+            <input required="" placeholder="TipoLibro" class="form__field" type="input" #tipoLibro>
+            <label class="form__label" for="name">Tipo de libro</label>
+        </div>
+        
+        <div class="form__group field">
+            <input required="" placeholder="Name" class="form__field" type="input" #precio>
+            <label class="form__label" for="name">Precio</label>
+        </div>
+        <div class="form__group field">
+            <input required="" placeholder="Name" class="form__field" type="input" #portada>
+            <label class="form__label" for="name">Portada</label>
+        </div>
+        <div class="form__group field">
+            <input required="" placeholder="Name" class="form__field" type="input" #id_libro>
+            <label class="form__label" for="name">id_libro</label>
+        </div>
+        <div class="form__group field">
+            <input required="" placeholder="Name" class="form__field" type="input" #id_usuario>
+            <label class="form__label" for="name">id_usuario</label>
+        </div>
+    </div>
+    <button class="button" on-click = enviar(titulo.value,autor.value,tipoLibro.value,precio.value,portada.value,id_libro.value,id_usuario.value)> Subir libro
+    </button>
+</div>

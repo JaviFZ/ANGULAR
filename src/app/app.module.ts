@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormularioRegistroComponent } from './components/formulario-registro/formulario-registro.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { LibrosComponent } from './pages/libros/libros.component';
+import { RefPipe } from './pipes/ref.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     FooterComponent,
     FormularioRegistroComponent,
     RegistroComponent,
-    PerfilComponent
+    PerfilComponent,
+    LibrosComponent,
+    RefPipe
   ],
   imports: [
     BrowserModule,
