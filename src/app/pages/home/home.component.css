@@ -23,7 +23,7 @@
     grid-row: y3 / y4;
     align-items: center;
     justify-content: center;
-    font-size: large;
+    font-size: 100%;
     border-radius: 50%;
 
     
@@ -36,7 +36,7 @@
     grid-row: y4 / y5;
     align-items: center;
     justify-content: center;
-    font-size:x-large;
+    font-size: 200%;;
     color: bisque;
     
 }

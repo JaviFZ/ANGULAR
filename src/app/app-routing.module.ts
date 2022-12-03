@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LibrosComponent } from './pages/libros/libros.component';
+import { ModificarLibroComponent } from './pages/modificar-libro/modificar-libro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { SubirLibroComponent } from './pages/subir-libro/subir-libro.component';
 
 
 
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: "libros", component:LibrosComponent},
   {path: "registro", component:RegistroComponent},
   {path:"perfil", component:PerfilComponent}, 
+  {path:"subirLibro", component:SubirLibroComponent},
+  {path:"modificarLibro", component:ModificarLibroComponent},
   {path:"", pathMatch:"full" , redirectTo:"home"}  
 ];
 ////////////////////////////////////////////////////////

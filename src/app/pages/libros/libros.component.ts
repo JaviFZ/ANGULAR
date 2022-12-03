@@ -1,5 +1,7 @@
+
 import { Component } from '@angular/core';
 import { Libro } from 'src/app/models/libro';
+import { LibrosService } from 'src/app/shared/libros.service';
 
 @Component({
   selector: 'app-libros',
@@ -7,23 +9,28 @@ import { Libro } from 'src/app/models/libro';
   styleUrls: ['./libros.component.css']
 })
 export class LibrosComponent {
-  public libros: Libro[];
+  public libros: Libro[] = [];
 
-  constructor(){
-    this.libros = [
-      new Libro("El señor de los anillos", "tapa blanda", "Tolkien", 20, "../../../assets/img/esdla.jpg", ),
-      new Libro("Celda 211", "tapa dura", "Antonio Salas", 15, "../../../assets/img/celda_211.webp" ),
-      new Libro("Trainpotting", "tapa dura", "Irvine Welsh", 10, "../../../assets/img/train.jpg" ),
-   
+  constructor(public libroService: LibrosService){}
+
+  public mostrarLibros(id_libro: string = ""){
+    if(id_libro == ""){
+      this.libros= this.libroService.getAll()
+    }
+    else {
+      this.libros= [this.libroService.getOne(Number(id_libro))]
+    }
+  }
+
+  public eliminarLibro(id_libro: Number){
+    this.libroService.delete(id_libro)
+  }
+  
   
 
-     
-    ]
-  }
-
-  enviar(newTitle: String, newAutor: String, newBookType: String, newPrice: Number, newPort: String, newId_libro: Number, newId_user: Number){
-    let introducirLibro : Libro = new Libro(newTitle, newAutor, newBookType, newPrice, newPort, newId_libro,newId_user )
-    this.libros.push(introducirLibro)
-  }
+  // enviar(newTitle: String, newAutor: String, newBookType: String, newPrice: Number, newPort: String, newId_libro: Number, newId_user: Number){
+  //   let introducirLibro : Libro = new Libro(newTitle, newAutor, newBookType, newPrice, newPort, newId_libro,newId_user )
+  //   this.libros.push(introducirLibro)
+  // }
 
 }
