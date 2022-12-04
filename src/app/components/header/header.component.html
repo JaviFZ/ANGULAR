@@ -3,11 +3,12 @@
         <h1>MyBooks</h1>
     </div>
     <div class="buttons">
-        <button routerLink="home">Home</button>
-        <button routerLink="subirLibro">Subir Libro</button>
-        <button routerLink="modificarLibro">Actualizar Libro</button>
-        <button routerLink="libros">Libros</button>
-        <button routerLink="registro">Registro</button>
-        <button routerLink="perfil">Perfil</button>
+        <button routerLink="home"*ngIf="logueado==false">Home</button>
+        <button routerLink="subirLibro" *ngIf="logueado==true">Subir Libro</button>
+        <button routerLink="modificarLibro"*ngIf="logueado==true">Actualizar Libro</button>
+        <button routerLink="libros"*ngIf="logueado==true">Libros</button>
+        <button routerLink="registro"*ngIf="logueado==false">Registro</button>
+        <button routerLink="perfil"*ngIf="logueado==true">Perfil</button>
+        <button routerLink="login"*ngIf="logueado==false">Login</button>
     </div>
 </div>

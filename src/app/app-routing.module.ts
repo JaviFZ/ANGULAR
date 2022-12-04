@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LibrosComponent } from './pages/libros/libros.component';
+import { LoginComponent } from './pages/login/login.component';
 import { ModificarLibroComponent } from './pages/modificar-libro/modificar-libro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:"perfil", component:PerfilComponent}, 
   {path:"subirLibro", component:SubirLibroComponent},
   {path:"modificarLibro", component:ModificarLibroComponent},
+  {path:"login", component:LoginComponent},
   {path:"", pathMatch:"full" , redirectTo:"home"}  
 ];
 ////////////////////////////////////////////////////////

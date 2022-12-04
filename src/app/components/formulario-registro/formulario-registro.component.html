@@ -1,11 +1,12 @@
 
   <div class="form">
-      <input type="text" name="text" class="input" placeholder="Nombre">
-      <input type="text" name="text" class="input" placeholder="Apellido">
-      <input type="text" name="text" class="input" placeholder="email">
-      <input type="password" name="text" class="input" placeholder="Introduce contraseña">
-      <input type="password" name="text" class="input" placeholder="Repite la contraseña">
-      <a class="fancy" href="#">
+      <input type="text" name="text" class="input" placeholder="Nombre" #nombre>
+      <input type="text" name="text" class="input" placeholder="Apellido" #apellidos>
+      <input type="text" name="text" class="input" placeholder="email" #email>
+      <input type="text" name="text" class="input" placeholder="foto" #foto>
+      <input type="password" name="text" class="input" placeholder="Introduce contraseña" #password>
+      <input type="password" name="text" class="input" placeholder="Repite la contraseña" #password2>
+      <a class="fancy" (click)="registrarse(nombre.value,apellidos.value,email.value,foto.value,password.value,password2.value)">
           <span class="top-key"></span>
           <span class="text">Enviar</span>
           <span class="bottom-key-1"></span>

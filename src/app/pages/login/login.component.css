@@ -1,0 +1,23 @@
+.paginaform{
+    background-image: url(../../../assets/img/libreria_cabezas.jpg);
+    height: 75vh;
+    width: 100%;
+    background-position-x: -2.3vw;
+    background-position-y: 20%;
+    /* background-size:cover; */
+    background-size: 103vmax, 100vmin;
+    
+    display: grid;
+    grid-template-columns: [x0]1fr [x1]1fr [x2]1fr [x3]1fr  [x4] 1fr [x5] 1fr [x6];
+    grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4]  ;
+}
+
+.form{
+    /* border: 2px solid blue; */
+    grid-column: x2/x4;
+    grid-row: y1/y3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
