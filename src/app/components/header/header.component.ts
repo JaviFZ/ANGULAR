@@ -7,9 +7,7 @@ import { UsuariosService } from 'src/app/shared/usuarios.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  logueado = false;
-  constructor(private usuariosServices: UsuariosService) {
-    this.logueado = this.usuariosServices.logueado;
+  constructor(public usuariosServices: UsuariosService) {
     if (this.usuariosServices.logueado == true) {
     }
   }

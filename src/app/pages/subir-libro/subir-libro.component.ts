@@ -16,7 +16,6 @@ export class SubirLibroComponent {
 
   enviar(newTitle: String, newBookType: String,newAutor: String,  newPrice: Number, newPort: String, newId_libro: Number, newId_user: Number){
     let introducirLibro : Libro = new Libro(newTitle, newBookType,newAutor,  newPrice, newPort, newId_libro,newId_user )
-    this.libroService.add(introducirLibro)
+    this.libroService.add(introducirLibro).subscribe((respuesta: any) => {})
   }
-  
 }

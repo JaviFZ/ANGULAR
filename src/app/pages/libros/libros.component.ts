@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Libro } from 'src/app/models/libro';
 import { LibrosService } from 'src/app/shared/libros.service';
+import { UsuariosService } from 'src/app/shared/usuarios.service';
 
 @Component({
   selector: 'app-libros',
@@ -11,21 +12,26 @@ import { LibrosService } from 'src/app/shared/libros.service';
 export class LibrosComponent {
   public libros: Libro[] = [];
 
-  constructor(public libroService: LibrosService){}
+  constructor(public libroService: LibrosService, public usuarioService: UsuariosService){}
 
   public mostrarLibros(id_libro: string = ""){
     if(id_libro == ""){
-      this.libros= this.libroService.getAll()
+      this.libroService.getAll(this.usuarioService.usuario.id_usuario).subscribe((respuesta: any) => {
+        this.libros = respuesta
+      })
     }
     else {
-      this.libros= [this.libroService.getOne(Number(id_libro))]
+      this.libroService.getOne(this.usuarioService.usuario.id_usuario, Number(id_libro)).subscribe((respuesta: any) => {
+        this.libros = respuesta
+      })
     }
   }
 
   public eliminarLibro(id_libro: Number){
-    this.libroService.delete(id_libro)
-  }
-  
+    this.libroService.delete(id_libro).subscribe((respuesta: any) => {
+      this.libros = respuesta
+  })
+}
   
 
   // enviar(newTitle: String, newAutor: String, newBookType: String, newPrice: Number, newPort: String, newId_libro: Number, newId_user: Number){
