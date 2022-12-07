@@ -5,7 +5,8 @@
         <input class="button" value="Buscar" type="submit" (click)="mostrarLibros(id.value)">
     </div>
 </div>
-<div class="libros" >
+<div class="libros" *ngIf="libros?.length>0; else noHayLibros">
+
     <div class="card" *ngFor="let libro of libros;let par = even;" >
         <div class="card-border-top">
         </div>
@@ -22,10 +23,10 @@
      
       
 </div>
-
-<div class="libros" *ngIf="libros.length===0">
-    <div>NO HAY LIBROS</div>
+<ng-template #noHayLibros>
+<div class="libros">
+    <div class="noHayLibros">NO HAY LIBROS</div>
 </div>
-
+</ng-template>
 
 

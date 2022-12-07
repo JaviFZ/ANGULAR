@@ -50,6 +50,16 @@ export class LibrosService {
   //     return true;
   //   }
   // }
+// public delete(id_libro: Number):boolean
+  // {
+  //   let posicion = this.libros.findIndex(libro=> libro.id_libro == id_libro)
+  //   if(posicion == -1){
+  //     return false;
+  //   } else{
+  //     this.libros.splice(posicion, 1)
+  //     return true;
+  //   }
+  // }
 
 
   
@@ -74,17 +84,7 @@ export class LibrosService {
     return this.http.put(this.url + "libro?id_usuario=" + libro.id_usuario + "&id_libro=" + libro.id_libro, libro)
   }
 
-  // public delete(id_libro: Number):boolean
-  // {
-  //   let posicion = this.libros.findIndex(libro=> libro.id_libro == id_libro)
-  //   if(posicion == -1){
-  //     return false;
-  //   } else{
-  //     this.libros.splice(posicion, 1)
-  //     return true;
-  //   }
-  // }
-
+  
   public delete(id_libro: Number):Observable<Object>
   {
     return this.http.delete(this.url + "libro" , {body:{id_libro}})

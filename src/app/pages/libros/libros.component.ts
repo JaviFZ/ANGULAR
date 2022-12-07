@@ -12,8 +12,10 @@ import { UsuariosService } from 'src/app/shared/usuarios.service';
 export class LibrosComponent {
   public libros: Libro[] = [];
 
-  constructor(public libroService: LibrosService, public usuarioService: UsuariosService){}
-
+  constructor(public libroService: LibrosService, public usuarioService: UsuariosService){
+    this.libroService.getAll(this.usuarioService.usuario.id_usuario).subscribe((respuesta: any) => { this.libros = respuesta})
+  }
+  
   public mostrarLibros(id_libro: string = ""){
     if(id_libro == ""){
       this.libroService.getAll(this.usuarioService.usuario.id_usuario).subscribe((respuesta: any) => {
@@ -28,8 +30,9 @@ export class LibrosComponent {
   }
 
   public eliminarLibro(id_libro: Number){
-    this.libroService.delete(id_libro).subscribe((respuesta: any) => {
-      this.libros = respuesta
+    this.libroService.delete(id_libro).subscribe(() => {
+      const i = this.libros.findIndex((libro)=> libro.id_libro == id_libro)
+      this.libros.splice(i, 1)
   })
 }
   
