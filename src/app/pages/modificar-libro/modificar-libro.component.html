@@ -11,7 +11,7 @@
             <label class="form__label" for="name">Autor</label>
         </div>
         <div class="form__group field">
-            <input required="" placeholder="TipoLibro" class="form__field" type="input" #tipoLibro>
+            <input required="" placeholder="TipoLibro" class="form__field" type="input" #tipo>
             <label class="form__label" for="name">Tipo de libro</label>
         </div>
         
@@ -20,7 +20,7 @@
             <label class="form__label" for="name">Precio</label>
         </div>
         <div class="form__group field">
-            <input required="" placeholder="Name" class="form__field" type="input" #portada>
+            <input required="" placeholder="Name" class="form__field" type="input" #foto>
             <label class="form__label" for="name">Portada</label>
         </div>
         <div class="form__group field">
@@ -32,7 +32,7 @@
             <label class="form__label" for="name">id_usuario</label>
         </div>
     </div>
-    <button class="button" > Actualizar libro
+    <button class="button" (click) = "enviar(titulo.value,tipo.value,autor.value,precio.value,foto.value,id_libro.value,id_usuario.value)" > Actualizar libro
     </button>
 </div>
 <div class="hueco"></div>

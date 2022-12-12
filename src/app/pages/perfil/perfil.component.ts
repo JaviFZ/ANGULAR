@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { UsuariosService } from 'src/app/shared/usuarios.service';
 
 @Component({
   selector: 'app-perfil',
@@ -9,8 +10,8 @@ import { Usuario } from 'src/app/models/usuario';
 export class PerfilComponent {
   public newUser : Usuario;
 
-  constructor(){
-    this.newUser = new Usuario(1, "Javier", "Fernandez Zapata", "jferzap@gmail.com", "../../../assets/img/person.jpg", "jajajaja" )
+  constructor(public usuarioService: UsuariosService){
+    this.newUser = usuarioService.usuario
   }
 
   enviar(newName: String, newLastName: String, newMail: String, newUrl: String){
@@ -18,7 +19,12 @@ export class PerfilComponent {
     this.newUser.nombre = newName;
     this.newUser.apellidos = newLastName;
     this.newUser.correo = newMail;
-    this.newUser.url = newUrl;
+    this.newUser.foto = newUrl;
+
+    console.log(this.newUser.foto);
+    console.log();
+    
+    
     
   }
 }

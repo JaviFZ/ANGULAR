@@ -3,15 +3,15 @@ export class Usuario {
     public nombre: String;
     public apellidos: String;
     public correo: String;
-    public url: String;
+    public foto: String;
     public password: String;
 
-        constructor (id_usuario: Number,nombre: String, apellidos: String, correo: String, url: String,  password: String){
+        constructor (id_usuario: Number,nombre: String, apellidos: String, correo: String, foto: String,  password: String){
             this.id_usuario= id_usuario;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.correo = correo;
-            this.url = url;
+            this.foto = foto;
             this.password = password;
         }
 
